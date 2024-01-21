@@ -27,7 +27,13 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
   }
+
+  .imagem-banner-sanddz:hover {
+    transform: scale(1.1); 
+}
 
   .ajuste-banner-sanddz {
     padding-top: 95px;
@@ -43,4 +49,221 @@
   header{
     margin-left: 100px;
     padding-top: 45px;
+    float: left;
   }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block; /* Para aplicar transform corretamente */
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
+  
+}
+
+a {
+    font-size: 30px; 
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+h2{
+    font-weight: bold;
+    font-size: 35px;  
+}
+
+/* #produto1{
+    padding-top: 70px;
+    float: left;
+    margin-left: 80px;
+}
+
+.container1{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.container1 img {
+    width: 204px;
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.container1:hover {
+    transform: scale(2.0); 
+}
+
+.texto {
+    font-size: 20px;
+}
+
+#produto2{
+    padding-top: 108px;
+    float: left;
+    margin-left: 80px;
+}
+
+.container2{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.container2 img {
+    width: 204px;
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.container2:hover {
+    transform: scale(2.0); 
+}
+
+
+#produto3{
+    padding-top: 108px;
+    float: left;
+    margin-left: 80px;
+}
+
+.container3{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.container3 img {
+    width: 204px;
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.container3:hover {
+    transform: scale(2.0); 
+}
+
+#produto4{
+    padding-top: 108px;
+    float: left;
+    margin-left: 80px;
+}
+
+.container4{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.container4 img {
+    width: 204px;
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.container4:hover {
+    transform: scale(2.0); 
+}
+
+#produto5{
+    padding-top: 108px;
+    float: left;
+    margin-left: 80px;
+}
+
+.container5{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.container5 img {
+    width: 204px;
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.container5:hover {
+    transform: scale(2.0); 
+}
+
+#produto6{
+    padding-top: 108px;
+    float: none;
+    margin-left: 80px;
+}
+
+.container6{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.container6 img {
+    width: 204px;
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.container6:hover {
+    transform: scale(2.0); 
+} */
+
+.loja-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px; 
+    padding-top: 108px;
+    margin-left: 80px;
+}
+
+#produto1, #produto2, #produto3, #produto4, #produto5, #produto6 {
+    flex: 1;
+    max-width: 300px; 
+}
+
+
+.main-produto {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-produto img {
+    width: 204px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.main-produto:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+
+
