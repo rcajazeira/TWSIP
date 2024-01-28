@@ -7,11 +7,13 @@
 body {
     background: linear-gradient(180deg, rgba(218, 149, 229, 0.82) 0%, rgba(231, 15, 15, 0.00) 100%);
     height: 100vh;
+    width: 100%;
+    margin-left: 110px;
   }
 
   h1 {
     text-align: center;
-    font-size: 7em;
+    font-size: 10em;
     margin-top: 100px;
     color: #FBCB23;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px #73297E;
@@ -47,15 +49,26 @@ body {
     border: 2px solid #000;
     border-radius: 20px;
     padding: 10px;
-    width: 550px;
-    height: 66px;
+    width: 647px;
+    height: 80px;
     padding-left: 100px;
     box-shadow: 0px 4px 4px 0px #000;
     font-size: 30px;
     transition: background-color 0.3s ease; 
     cursor: pointer; 
+    opacity: 0;
+    animation: fade-in 0.5s ease forwards;
     /* background: #73297E; */
     
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   .search-input:hover {
@@ -72,7 +85,7 @@ body {
 
   position: absolute;
   top: 335px;
-  left: 1400px;
+  left: 1300px;
    }
 
    /* .search-icon {
@@ -88,21 +101,112 @@ body {
     /* width: 50px;
     height: 50px; */
     position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s ease; 
-  cursor: pointer;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease; 
+    cursor: pointer;
   /* padding-left: 1400px;
   margin-top: -1040px; */
   }
 
   .search-container .icone-busca:hover {
-    transform: rotate(45deg); 
+    /* transform: rotate(45deg);  */
+    /* transform: scale(3.0); */
+    /* transform: rotateY(15deg); */
+    /* transform: translateX(2px); */
+    transform: translateX(1px);
   }
 
   .search-input::placeholder {
     font-size: 32px; 
+  }
+
+  .user-carro figure {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+.user-carro .usuario,
+.user-carro .carro,
+.user-carro .loca1,
+.user-carro .loca2 {
+  position: absolute;
+  top: -1020px; /* subir */
+}
+
+.user-carro .loca1,
+.user-carro .loca2 {
+  margin-left: 60px; /* tentativa espaçamento */
+}
+
+/* .user-carro .loca1 {
+    /* float: right; */     /* Move o elemento para a esquerda */
+  /* }
+/* 
+  .user-carro .loca2 {
+    /* float: left; Move o elemento para a esquerda */
+  /* } */ */ */ */
+
+.user-carro .usuario,
+.user-carro .carro {
+  margin-left: 60px; /* tentativa espaçamento */
+}
+
+.user-carro .usuario {
+    left: 2000px;
+    height: 200px;
+    width: 200px;
+  }
+
+  .user-carro .loca1 {
+    left: 2290px;
+    color: #FBCB23;
+    text-shadow: 0px 4px 4px #000;
+    font-family: Roboto;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .user-carro .carro {
+    left: 2700px;
+    height: 200px;
+    width: 200px;
+  }
+  
+  .user-carro .loca2 {
+    left: 3000px;
+    color: #FBCB23;
+    text-shadow: 0px 4px 4px #000;
+    font-family: Roboto;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .user-carro .garota-compra {
+    position: absolute;
+    top: -600px;
+    left: 1420px;
+
+  }
+
+  .user-carro .texto-shopping-china {
+    position: absolute;
+    top: 750px; /* Ajuste a posição vertical conforme necessário */
+    left: 2600px; /* Ajuste a posição horizontal conforme necessário */
+    font-size: 140px;
+    color: #FBCB23;
+    text-align: justify;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px #73297E;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
   }
