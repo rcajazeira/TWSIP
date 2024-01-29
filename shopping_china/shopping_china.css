@@ -160,6 +160,7 @@ body {
     left: 2000px;
     height: 200px;
     width: 200px;
+    cursor: pointer; 
   }
 
   .user-carro .loca1 {
@@ -171,12 +172,14 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    cursor: pointer; 
   }
 
   .user-carro .carro {
     left: 2700px;
     height: 200px;
     width: 200px;
+    cursor: pointer; 
   }
   
   .user-carro .loca2 {
@@ -188,6 +191,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    cursor: pointer; 
   }
 
   .user-carro .garota-compra {
