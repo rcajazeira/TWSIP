@@ -1,0 +1,43 @@
+Forno de Embutir Elétrico 80L Experience com Foodsensor 220V Electrolux
+R$ 2.349,90
+
+Micro-ondas Inox 36L 127V Electrolux
+R$ 849,90
+
+Geladeira Panasonic Frost Free Bt55 483l - 127v (110v)
+R$ 3.946,12 
+
+-----------------------------
+Ar Condicionado Janela Consul 7500 BTU/h Frio Eletrônico CCN07FBANA 127 Volts
+R$ 3.148,20
+
+Fritadeira Eletrônica Britânia S Óleo Bfr46Pi - Britania
+R$ 1.062,10
+
+Esteira Eletronica Gallant EliteMotor 3.0HPM Até 120kg 16Km/h 12 Niveis de Inclinação220V
+R$ 2.929,52
+
+---------------------------------------------------
+Smartphone Samsung Galaxy A04e 64GB Azul 4G Octa-Core 3GB RAM 6,5” Câm. Dupla + Selfie 5MP
+R$ 566,10
+
+Smartphone Motorola Moto G14 128GB Grafite 4G Octa-Core 4 GB RAM 6,5" Câm. Dupla + Selfie 8MP Dual Nano SIM
+R$ 764,10
+
+Smartphone Positivo Twist 5 64GB Preto 3G Unisoc 2GB RAM 6,26" Câm. 8MP + Selfie 8MP Dual Chip
+R$ 359,10
+
+CREATE TABLE IF NOT EXISTS `food_park`.`login` (
+  `idlogin` INT NOT NULL AUTO_INCREMENT,
+  `_user` VARCHAR(45) NULL,
+  `senha` VARCHAR(45) NULL,
+  `truck_cnpj` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`idlogin`, `truck_cnpj`),
+  INDEX `fk_login_truck1_idx` (`truck_cnpj` ASC) ,
+  CONSTRAINT `fk_login_truck1`
+    FOREIGN KEY (`truck_cnpj`)
+    REFERENCES `food_park`.`truck` (`cnpj`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
