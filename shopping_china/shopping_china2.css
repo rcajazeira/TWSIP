@@ -18,6 +18,99 @@ h1 {
     font-weight: 900;
   }
 
+  .marca_shopping_china {
+    margin-top: 100px;
+    padding-left: 100px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .marca_shopping_china img {
+    box-shadow: 0px 4px 4px 0px #000;
+    width: 400px; 
+    height: auto; 
+  }
+
+  .search-input {
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 10px;
+    width: 647px;
+    height: 80px;
+    padding-left: 100px;
+    box-shadow: 0px 4px 4px 0px #000;
+    font-size: 30px;
+    transition: background-color 0.3s ease; 
+    cursor: pointer; 
+    opacity: 0;
+    animation: fade-in 0.5s ease forwards;
+    /* background: #73297E; */
+    
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .search-input:hover {
+    background-color: #eaeaea; 
+  }
+
+  .search-container {
+    /* padding-left: 1400px;
+    margin-top: -1040px; */
+    /* position: relative;
+  display: inline-block; */
+  /* position: relative;
+  display: inline-block; */
+
+  position: absolute;
+  top: 335px;
+  left: 1300px;
+   }
+
+   /* .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #000;
+  } */
+
+  .search-container .icone-busca {
+    /* width: 50px;
+    height: 50px; */
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease; 
+    cursor: pointer;
+  /* padding-left: 1400px;
+  margin-top: -1040px; */
+  }
+
+  .search-container .icone-busca:hover {
+    /* transform: rotate(45deg);  */
+    /* transform: scale(3.0); */
+    /* transform: rotateY(15deg); */
+    /* transform: translateX(2px); */
+    transform: translateX(1px);
+  }
+
+  .search-input::placeholder {
+    font-size: 32px; 
+  }
+
   .site-footer {
     background-color: #73297E;
     margin-top: 100px;
