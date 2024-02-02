@@ -28,7 +28,7 @@ h1 {
   
   .marca_shopping_china img {
     box-shadow: 0px 4px 4px 0px #000;
-    width: 400px; 
+    width: 275px; 
     height: auto; 
   }
 
@@ -36,8 +36,8 @@ h1 {
     border: 2px solid #000;
     border-radius: 20px;
     padding: 10px;
-    width: 500px;
-    height: 50px;
+    width: 333px;
+    height: 30px;
     padding-left: 100px; 
     box-shadow: 0px 4px 4px 0px #000;
     font-size: 30px;
@@ -65,7 +65,7 @@ h1 {
   .search-container {
   position: absolute;
   top: 255px;
-  left: 580px;
+  left: 400px;
    }
 
 
@@ -76,8 +76,8 @@ h1 {
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     transition: transform 0.3s ease; 
     cursor: pointer;
  
@@ -89,8 +89,88 @@ h1 {
   }
 
   .search-input::placeholder {
-    font-size: 32px; 
+    font-size: 18px; 
   }
+
+  /* inicio da parte de logo e foto carrinho */
+
+  .usuario {
+    position: absolute;
+    top: 245px;
+    left: 800px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    
+}
+
+.loca1 {
+    position: absolute;
+    top: 250px;
+    left: 875px;
+    height: 45px;
+    width: 45px;
+    color: #FBCB23;
+    text-shadow: 0px 4px 4px #000;
+    font-family: Roboto;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+}
+
+.carro {
+    position: absolute;
+    top: 248px;
+    left: 990px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.loca2 {
+    position: absolute;
+    top: 250px;
+    left: 1065px;
+    height: 45px;
+    width: 45px;
+    color: #FBCB23;
+    text-shadow: 0px 4px 4px #000;
+    font-family: Roboto;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+}
+
+.garota-compra {
+    position: absolute;
+    top: 330px;
+    left: 430px;
+    box-shadow: 0px 4px 4px 0px #000;
+    width: 275px; 
+    height: auto; 
+}
+
+.texto-shopping-china {
+    position: absolute;
+    top: 330px; /* Ajuste a posição vertical conforme necessário */
+    left: 743px; /* Ajuste a posição horizontal conforme necessário */
+    font-size: 30px;
+    color: #FBCB23;
+    text-align: justify;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px #73297E;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-right: 110px;
+}
+
+
+
+
 
   .site-footer {
     background-color: #73297E;
