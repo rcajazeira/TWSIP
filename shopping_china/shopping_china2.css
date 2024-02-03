@@ -168,11 +168,11 @@ h1 {
     margin-right: 110px;
 }
 
-/* inicio do carrossel */
+/* inicio do quadro de produtos */
 
 .retangulo {
-    width: 1100px;
-    height: 600px;
+    width: 1130px;
+    height: 700px;
     flex-shrink: 0;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px #000;
@@ -186,9 +186,46 @@ h1 {
 #parte-menu {
     display: flex;
     justify-content: space-between;
-    width: 4800px;
+    width: 1130px;
     margin: 0 auto;
   }
+  
+  .coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .produtos {
+    width: 1130px;
+    text-align: center;
+    margin-right: 10px;
+    margin: 10px;
+  }
+  
+  .centralizado {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .direita {
+    margin-left: auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.7em;
+    margin-top: 10px;
+    color: #73297E;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px #FBCB23;
+    font-family: 'Roboto Serif', serif;
+    font-weight: 900;
+  }
+
+
+
+
 
 
 
@@ -198,7 +235,7 @@ h1 {
 
   .site-footer {
     background-color: #73297E;
-    margin-top: 100px;
+    margin-top: 250px;
     padding: 50px 0;
     color: #FFF;
     width: 100%;
