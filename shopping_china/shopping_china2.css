@@ -171,8 +171,8 @@ h1 {
 /* inicio do quadro de produtos */
 
 .retangulo {
-    width: 1190px;
-    height: 1400px;
+    width: 1280px;
+    height: 1100px;
     flex-shrink: 0;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px #000;
@@ -267,40 +267,38 @@ h1 {
   }
 
   .produto4 img {
-    margin-top: 10px; 
+    margin-top: 40px; 
     margin-left: 10px;
  
   }
 
   .produto4 h3 {
     color: black;
-    margin-top: 10px;
-    margin-top: 15px; 
+    margin-top: 60px; 
     margin-left: 25px;
     font-size: 18px;
     text-align: justify
   }
 
-  /* .produto6 img {
-    width: 1200px;
-    height: 900px;
+  .produto6 img {
+    width: 359px;
+    height: 270px;
     text-align: center;
-  } */
+  }
 
-  /* .produto6 img {
-    margin-top: 150px; 
-    margin-left: 365px;
+  .produto6 img {
+    margin-top: 40px; 
+    margin-left: 5px;
  
-  } */
+  }
 
-  /* .produto6 h3 {
+  .produto6 h3 {
     color: black;
-    margin-top: 10px;
-    margin-top: 300px; 
-    margin-left: 200px;
-    font-size: 80px;
-    text-align: justify;
-  } */
+    margin-top: 60px; 
+    margin-left: 20px;
+    font-size: 18px;
+    text-align: justify
+  }
 
   .produto1 img {
     width: 339px;
@@ -331,39 +329,102 @@ h1 {
 
   .produto3 img {
     margin-top: -3px; 
-    margin-left: -80px;
-  
- 
+    margin-left: 10px;
   }
 
   .produto3 h3 {
     color: black;
     margin-top: 15px; 
-    margin-left: -50px;
+    margin-left: 35px;
     font-size: 18px;
     text-align: justify;
   }
 
-  /* .produto5 img {
-    width: 1200px;
-    height: 900px;
+  .produto5 img {
+    width: 339px;
+    height: 245px;
     text-align: center;
-  } */
+  }
 
-  /* .produto5 img {
-    margin-top: 230px; 
-    margin-left: 365px;
+  .produto5 img {
+    margin-top: 35px; 
+    margin-left: 10px;
  
-  } */
+  }
 
-  /* .produto5 h3 {
+  .produto5 h3 {
     color: black;
-    margin-top: 10px;
-    margin-top: 250px; 
-    margin-left: 200px;
-    font-size: 80px;
+    margin-top: 15px; 
+    margin-left: 15px;
+    font-size: 18px;
     text-align: justify;
-  } */
+  }
+
+  /* Animações  */
+
+  .produto1 {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .produto1:hover {
+    transform: scale(1.1);
+  }
+
+  .produto2 {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .produto2:hover {
+    transform: scale(1.1);
+  }
+  .produto3 {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .produto3:hover {
+    transform: scale(1.1);
+  }
+
+  .produto4 {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .produto4:hover {
+    transform: scale(1.1);
+  }
+
+  .produto5 {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .produto5:hover {
+    transform: scale(1.1);
+  }
+
+  .produto6 {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .produto6:hover {
+    transform: scale(1.1);
+  }
+
+  .marca_shopping_china img {
+    transition: transform 0.3s ease-in-out;
+    
+  }
+  
+  .marca_shopping_china img:hover {
+    transform: scale(1.1);
+  }
+
+  .garota-compra {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .garota-compra:hover {
+    transform: scale(1.2);
+  }
 
 
 
