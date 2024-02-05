@@ -1,5 +1,4 @@
-<script>
-  // Função para adicionar um produto ao carrinho
+    // Função para adicionar um produto ao carrinho
   function adicionarAoCarrinho(produto) {
     // Lógica para adicionar o produto ao carrinho
     // Aqui você pode usar o código necessário para adicionar o produto ao carrinho, como atualizar uma variável ou enviar uma requisição para o servidor.
@@ -24,4 +23,3 @@
     };
     adicionarAoCarrinho(produto);
   });
-</script>
