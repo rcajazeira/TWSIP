@@ -29,6 +29,6 @@ echo json_encode(['success' => true, 'nome' => $nomeProduto, 'preco' => $precoPr
     <button class="remover-do-carrinho">Remover do Carrinho</button>
   </div>
 </div> 
-<script src="/controller/adicionarAoCarrinho.js"></script>
+<script src="../controller/adicionarAoCarrinho.js"></script>
 </body>
 </html>
