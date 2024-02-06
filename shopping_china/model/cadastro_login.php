@@ -1,3 +1,24 @@
+<?php
+// Inclui o arquivo de configuração
+require_once "config.php";
+
+// Verifica se o formulário de cadastro foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"]) && isset($_POST["cpf"])) {
+    $nome = $_POST["nome"];
+    $cpf = $_POST["cpf"];
+
+    // Insere os dados na tabela cliente
+    $sql = "INSERT INTO cliente (nome, cpf) VALUES ('$nome', '$cpf')";
+    
+    if ($conn->query($sql) === TRUE) {
+        echo "Cadastro realizado com sucesso!";
+    } else {
+        echo "Erro ao cadastrar: " . $conn->error;
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
