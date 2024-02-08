@@ -1,21 +1,34 @@
 <?php
-// Inclui o arquivo de configuração
+// Inclua o arquivo de configuração
 require_once "config.php";
 
 // Verifica se o formulário de cadastro foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"]) && isset($_POST["cpf"])) {
-    $nome = $_POST["nome"];
-    $cpf = $_POST["cpf"];
+if (isset($_POST['nome']) && isset($_POST['cpf'])) {
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
 
-    // Insere os dados na tabela cliente
+    // Insere os dados no banco de dados
     $sql = "INSERT INTO cliente (nome, cpf) VALUES ('$nome', '$cpf')";
-    
+
     if ($conn->query($sql) === TRUE) {
         echo "Cadastro realizado com sucesso!";
     } else {
         echo "Erro ao cadastrar: " . $conn->error;
     }
 }
+
+// Verifica se o formulário de login foi enviado
+if (isset($_POST['nomeLogin']) && isset($_POST['cpfLogin'])) {
+    $nomeLogin = $_POST['nomeLogin'];
+    $cpfLogin = $_POST['cpfLogin'];
+
+    // Faça o processo de login aqui, por exemplo, verificar se as credenciais são válidas
+
+    // Redireciona para a próxima página após o login
+    header("Location: outra_pagina.php");
+    exit();
+}
+
 ?>
 
 

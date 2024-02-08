@@ -1,53 +1,23 @@
-<!-- <?php
-// Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "shopping_china";
-
-$conn = new mysqli($servername, $username, $password, $dbname) or die ("<html><script language = 'JavaScript'>alert ('Sem conexão com o BD')
-</script></html>");
-
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
-
-// Consulta SELECT para mostrar o conteúdo da tabela
-$sql = "SELECT * FROM cliente";
-$result = $conn->query($sql);
-
-// Verifica se a consulta retornou resultados
-if ($result->num_rows > 0) {
-    // Loop através dos resultados e exibe os dados
-    while ($row = $result->fetch_assoc()) {
-        echo "nome " . $row["nome"] . "<br>";
-        echo "cpf " . $row["cpf"] . "<br>";
-        // Adicione mais linhas de código para exibir outras colunas, se necessário
-        echo "<br>";
-    }
-} else {
-    echo "Nenhum resultado encontrado.";
-}
-
-// Fecha a conexão com o banco de dados
-$conn->close();
-?> -->
-
-<!-- como ficaria -->
-
 <?php
+
+// Configurações do banco de dados
+$servername = "localhost"; // substitua pelo nome do seu servidor
+$username = "root"; // substitua pelo nome de usuário do seu banco de dados
+$password = ""; // substitua pela senha do seu banco de dados
+$dbname = "shopping_china"; // substitua pelo nome do seu banco de dados
+
 // Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "shopping_china";
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-$conn = new mysqli($servername, $username, $password, $dbname) or die ("<html><script language = 'JavaScript'>alert ('Sem conexão com o BD')
-</script></html>");
-
-// Verifica a conexão
+// Verifica se a conexão foi bem-sucedida
 if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
 }
+
 ?>
+
+
+
+
+
+
