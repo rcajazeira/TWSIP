@@ -507,3 +507,25 @@ h1 {
 .developer-info img:hover {
     transform: scale(0.9) translateX(-10px);
 }
+
+.adicionar-ao-carrinho span {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+  box-shadow: 0px 4px 4px 0px #000;
+  transition: background-color 0.3s ease;
+}
+
+.adicionar-ao-carrinho span:hover {
+  background-color: #428845;
+}
+
+input[type="text"] + span {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}

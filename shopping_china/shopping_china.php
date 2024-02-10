@@ -33,7 +33,7 @@
             <img src="view/icon/usuario.svg" alt="" class="usuario">
           </a>
             <h2 class="loca1">Login</h2>
-            <a href="model/addcar.php" target="_blank">
+            <a href="" target="_blank">
             <img src="view/icon/carrinho.svg" alt="" class="carro"></a>
             <h2 class="loca2">Carrinho</h2>
             <img src="view/img/me_faz_uma_logomarca_com_o_nome_Shopping_China_com_as_cores_Roxo_avermelhado_e_amarelo (2).png" alt="" class="garota-compra">
