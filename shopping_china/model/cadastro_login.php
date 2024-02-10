@@ -1,34 +1,48 @@
 <?php
-// Inclua o arquivo de configuração
-require_once "config.php";
+// Inclui o arquivo de configuração do banco de dados
+require_once 'config.php';
 
 // Verifica se o formulário de cadastro foi enviado
-if (isset($_POST['nome']) && isset($_POST['cpf'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nome']) && isset($_POST['cpf'])) {
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
 
-    // Insere os dados no banco de dados
-    $sql = "INSERT INTO cliente (nome, cpf) VALUES ('$nome', '$cpf')";
+    // Verifica se o usuário já está cadastrado
+    $consulta = "SELECT * FROM cliente WHERE cpf = '$cpf'";
+    $resultado = $conn->query($consulta);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Cadastro realizado com sucesso!";
+    if ($resultado && $resultado->num_rows > 0) { // Adiciona verificação se a consulta foi bem sucedida
+        echo "Já existe um cadastro com esse CPF!";
     } else {
-        echo "Erro ao cadastrar: " . $conn->error;
+        // Insere os dados no banco de dados
+        $sql = "INSERT INTO cliente (nome, cpf) VALUES ('$nome', '$cpf')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Cadastro realizado com sucesso!";
+        } else {
+            echo "Erro ao cadastrar: " . $conn->error;
+        }
     }
 }
 
 // Verifica se o formulário de login foi enviado
-if (isset($_POST['nomeLogin']) && isset($_POST['cpfLogin'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nomeLogin']) && isset($_POST['cpfLogin'])) {
     $nomeLogin = $_POST['nomeLogin'];
     $cpfLogin = $_POST['cpfLogin'];
 
-    // Faça o processo de login aqui, por exemplo, verificar se as credenciais são válidas
+    // Verifica se as credenciais de login são válidas
+    $consultaLogin = "SELECT * FROM cliente WHERE nome = '$nomeLogin' AND cpf = '$cpfLogin'";
+    $resultadoLogin = $conn->query($consultaLogin);
 
-    // Redireciona para a próxima página após o login
-    header("Location: outra_pagina.php");
-    exit();
+    if ($resultadoLogin && $resultadoLogin->num_rows > 0) { // Adiciona verificação se a consulta foi bem sucedida
+        // Login bem-sucedido, redireciona para a página de sucesso
+        header("Location: ../model/shopping_china_login.php");
+        exit;
+    } else {
+        // Login inválido, exibe uma mensagem de erro
+        echo "Login inválido.";
+    }
 }
-
 ?>
 
 
@@ -41,10 +55,11 @@ if (isset($_POST['nomeLogin']) && isset($_POST['cpfLogin'])) {
     <link rel="stylesheet" href="../view/css/cadastro_login.css">
    
     <title>Cadastro e Login</title>
+   
 </head>
 <body>
     <h1>Cadastro</h1>
-    <form id="cadastroForm">
+    <form id="cadastroForm" method="POST" action="cadastro_login.php" onsubmit="return cadastrar()">
         <!-- Campos do formulário de cadastro -->
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
@@ -56,16 +71,29 @@ if (isset($_POST['nomeLogin']) && isset($_POST['cpfLogin'])) {
     </form>
 
     <h1>Login</h1>
-    <form id="loginForm">
+    <!-- <form id="loginForm" method="POST" action="cadastro_login.php" onsubmit="return fazerLogin()"> -->
         <!-- Campos do formulário de login -->
-        <label for="nomeLogin">Nome:</label>
+        <!-- <label for="nomeLogin">Nome:</label>
         <input type="text" id="nomeLogin" name="nomeLogin" required>
         <br>
         <label for="cpfLogin">CPF:</label>
         <input type="text" id="cpfLogin" name="cpfLogin" required>
         <br>
         <input type="submit" value="Login">
-    </form>   
+    </form>    -->
+
+    
+    <form id="loginForm" method="POST" action="cadastro_login.php" onsubmit="return fazerLogin()">
+
+    <!-- Campos do formulário de login -->
+    <label for="nomeLogin">Nome:</label>
+    <input type="text" id="nomeLogin" name="nomeLogin" required>
+    <br>
+    <label for="cpfLogin">CPF:</label>
+    <input type="text" id="cpfLogin" name="cpfLogin" required>
+    <br>
+    <input type="submit" value="Login">
+</form>
 
     <footer class="site-footer">
         <div class="footer-container">
@@ -104,5 +132,36 @@ if (isset($_POST['nomeLogin']) && isset($_POST['cpfLogin'])) {
 
     
     <script src="../controller/cadastroForm.js"></script>
+    <script>
+       function fazerLogin() {
+    const nomeLogin = document.getElementById("nomeLogin").value;
+    const cpfLogin = document.getElementById("cpfLogin").value;
+
+    // Envia os dados para o servidor
+    fetch("../model/shopping_china_login.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "nomeLogin=" + encodeURIComponent(nomeLogin) + "&cpfLogin=" + encodeURIComponent(cpfLogin)
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data); // Exibe a resposta do servidor
+
+        // Verifica se as credenciais são válidas
+        if (data === "Credenciais válidas") {
+            window.location.href = "../model/shopping_china_login.php"; // Redireciona para a página "shopping_china_login.php"
+        } else {
+            console.log("Credenciais inválidas!");
+        }
+    })
+    .catch(error => {
+        console.error("Erro: " + error);
+    });
+}
+
+    </script>
+    <!-- <script src="../controller/cadastroForm2.js"></script> -->
 </body>
 </html>

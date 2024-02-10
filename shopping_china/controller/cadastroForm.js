@@ -1,34 +1,31 @@
-document.getElementById("cadastroForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const nome = document.getElementById("nome").value;
-    const cpf = document.getElementById("cpf").value;
+function fazerLogin() {
+    const nomeLogin = document.getElementById("nomeLogin").value;
+    const cpfLogin = document.getElementById("cpfLogin").value;
 
     // Envia os dados para o servidor
-    fetch("cadastro_login.php", {
+    fetch("../model/cadastro_login.php", { // Alterado o caminho para o mesmo arquivo atual
         method: "POST",
-        body: new URLSearchParams({
-            nome: nome,
-            cpf: cpf
-        })
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "nomeLogin=" + encodeURIComponent(nomeLogin) + "&cpfLogin=" + encodeURIComponent(cpfLogin)
     })
     .then(response => response.text())
     .then(data => {
         console.log(data); // Exibe a resposta do servidor
-        // Faça o que desejar com a resposta do servidor, como exibir uma mensagem de sucesso
+
+        // Verifica se as credenciais são válidas
+        if (data === "Credenciais válidas") {
+            window.location.href = "../model/shopping_china_login.php"; // Substitua "pagina_secreta.php" pela página para onde deseja redirecionar após o login
+        } else {
+            alert("Credenciais inválidas!"); // Exibe um alerta para o usuário
+        }
     })
     .catch(error => {
         console.error("Erro: " + error);
     });
-});
 
-
-
-
-
-
-
-
-
+    return false; // Impede o envio do formulário para a página "shopping_china_login.php"
+}
 
 
