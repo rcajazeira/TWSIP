@@ -48,15 +48,15 @@
       <div class="ism-slider" data-transition_type="zoom" data-image_fx="zoomrotate" id="my-slider">
         <ol>
           <li>
-            <img src="view/img/Group 10.jpg"> <div class="ism-caption ism-caption-0"><button class="adicionar-ao-carrinho" data-produto-id="produto-slider1">Adicionar ao Carrinho</button></div>
+            <img src="view/img/Group 10.jpg"> <div class="ism-caption ism-caption-0">Shopping China</div>
           </li>
           <li>
             <img src="view/img/Group 12.jpg">
-            <div class="ism-caption ism-caption-0"><button class="adicionar-ao-carrinho" data-produto-id="produto-slider2">Adicionar ao Carrinho</button></div>
+            <div class="ism-caption ism-caption-0">Shopping China</div>
           </li>
           <li>
             <img src="view/img/Group 14.jpg">
-            <div class="ism-caption ism-caption-0"><button class="adicionar-ao-carrinho" data-produto-id="produto-slider3">Adicionar ao Carrinho</button></div>
+            <div class="ism-caption ism-caption-0">Shopping China</div>
           </li>
         </ol>
       </div>
