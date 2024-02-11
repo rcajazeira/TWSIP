@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Carrinho</title>
 </head>
 <body>
    <div id="carrinho">
       <!-- Produtos no carrinho -->
       <?php
-// Inclua o arquivo de configuração
-require_once 'config.php';
-
-// Conecte-se ao banco de dados
 $conn = new mysqli("localhost", "root", "", "shopping_china");
 
-// Verifique se houve algum erro na conexão
 if ($conn->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
 
-// Consulta para buscar os produtos no carrinho
-$sql = "SELECT * FROM produtos";
+$sql = "SELECT * FROM produto";
 $result = $conn->query($sql);
 
-// Verifique se há resultados
 if ($result->num_rows > 0) {
-    // Exiba os produtos no carrinho
     while ($row = $result->fetch_assoc()) {
         echo '<div class="produto-no-carrinho">';
         echo '<h3>' . $row['nome'] . '</h3>';
@@ -38,38 +31,24 @@ if ($result->num_rows > 0) {
     echo 'Nenhum produto encontrado no carrinho.';
 }
 
-// Feche a conexão com o banco de dados
 $conn->close();
 ?>
    </div> 
 
    <script>
-      // Função para adicionar produto ao carrinho
+ // Função para adicionar produto ao carrinho
 function adicionarAoCarrinho(idProduto) {
-   // Fazer uma requisição AJAX para buscar os dados do produto
+   // Fazer uma requisição AJAX para adicionar o produto ao carrinho
    $.ajax({
-      url: 'buscar_produto.php',
+      url: 'adicionar_ao_carrinho.php',
       method: 'POST',
       data: { idProduto: idProduto },
       success: function(response) {
          // Verificar se a requisição foi bem-sucedida
          if (response.success) {
-            // Obter os dados do produto
-            const produto = response.produto;
-
-            // Criar o elemento HTML para o produto
-            const produtoHTML = `
-               <div class="produto-no-carrinho">
-                  <h3>${produto.nome}</h3>
-                  <p>Preço: ${produto.preco}</p>
-                  <button class="remover-do-carrinho">Remover do Carrinho</button>
-               </div>
-            `;
-
-            // Adicionar o produto ao carrinho
-            $('#carrinho').append(produtoHTML);
+            console.log('Produto adicionado ao carrinho com sucesso!');
          } else {
-            console.log('Erro ao buscar dados do produto.');
+            console.log('Erro ao adicionar produto ao carrinho.');
          }
       },
       error: function() {
@@ -77,6 +56,12 @@ function adicionarAoCarrinho(idProduto) {
       }
    });
 }
+
+// Adicionar evento de clique aos botões "Adicionar ao Carrinho"
+$('.adicionar-ao-carrinho').on('click', function() {
+   const idProduto = $(this).data('id');
+   adicionarAoCarrinho(idProduto);
+});
    </script>
 </body>
 </html>
