@@ -7,15 +7,68 @@
 </head>
 <body>
    <div id="carrinho">
-  <!-- Produtos no carrinho -->
-  <div class="produto-no-carrinho">
-    <h3>Nome do Produto</h3>
-    <p>Preço: R$ X</p>
-    <button class="remover-do-carrinho">Remover do Carrinho</button>
-  </div>
-</div> 
-<script src="/controller/addcar.js"></script>
-<script src="/controller/revovecar.js"></script>
-<script src="/controller/atualizarcar.js"></script>
+      <!-- Produtos no carrinho -->
+      <?php
+          // Inclua o arquivo de configuração
+          require_once 'config.php';
+         // Aqui você pode fazer a conexão com o banco de dados e buscar os produtos adicionados ao carrinho
+         // Vou fornecer um exemplo simples utilizando um array de produtos
+
+         $produtosCarrinho = [
+            [
+               'id' => 1,
+               'nome' => 'Nome do Produto 1',
+               'preco' => 'R$ 10'
+            ],
+            [
+               'id' => 2,
+               'nome' => 'Nome do Produto 2',
+               'preco' => 'R$ 20'
+            ]
+         ];
+
+         foreach ($produtosCarrinho as $produto) {
+            echo '<div class="produto-no-carrinho">';
+            echo '<h3>' . $produto['nome'] . '</h3>';
+            echo '<p>Preço: ' . $produto['preco'] . '</p>';
+            echo '<button class="remover-do-carrinho">Remover do Carrinho</button>';
+            echo '</div>';
+         }
+      ?>
+   </div> 
+
+   <script>
+      // Função para adicionar produto ao carrinho
+      function adicionarAoCarrinho(idProduto) {
+         // Obter os dados do produto com base no ID
+         // Aqui você pode fazer uma requisição AJAX para buscar os dados do produto no banco de dados
+
+         // Exemplo de dados do produto
+         const nomeProduto = "Nome do Produto";
+         const precoProduto = "R$ X";
+
+         // Criar o elemento HTML para o produto
+         const produtoHTML = `
+            <div class="produto-no-carrinho">
+               <h3>${nomeProduto}</h3>
+               <p>Preço: ${precoProduto}</p>
+               <button class="remover-do-carrinho">Remover do Carrinho</button>
+            </div>
+         `;
+
+         // Adicionar o produto ao carrinho
+         document.getElementById("carrinho").innerHTML += produtoHTML;
+      }
+
+      // Adicionar evento de clique aos botões de adicionar ao carrinho
+      const botoesAdicionar = document.getElementsByClassName("adicionar-ao-carrinho");
+      for (let i = 0; i < botoesAdicionar.length; i++) {
+         const botao = botoesAdicionar[i];
+         const idProduto = botao.getAttribute("data-idproduto");
+         botao.addEventListener("click", function() {
+            adicionarAoCarrinho(idProduto);
+         });
+      }
+   </script>
 </body>
 </html>

@@ -51,19 +51,19 @@
           <li>
             <img src="../view/img/Group 10.jpg">
             
-            <div class="ism-caption ism-caption-0"><button class="adicionar-ao-carrinho" data-produto-id="produto-slider1"><span>Adicionar ao Carrinho
-            </span></button></div>
+            <div class="ism-caption ism-caption-0">
+            <button class="adicionar-ao-carrinho" data-idproduto="3"><span>Adicionar ao Carrinho</span></button>
+          </div>
           
           </li>
           <li>
             <img src="../view/img/Group 12.jpg">
-            <div class="ism-caption ism-caption-0"><button class="adicionar-ao-carrinho" data-produto-id="produto-slider2"><span>Adicionar ao Carrinho
-            </span></button></div>
+            <div class="ism-caption ism-caption-0"><button class="adicionar-ao-carrinho produto-slider2" data-idproduto="4"><span>Adicionar ao Carrinho</span></button>
+          </div>
           </li>
           <li>
             <img src="../view/img/Group 14.jpg">
-            <div class="ism-caption ism-caption-0"><button class="adicionar-ao-carrinho" data-produto-id="produto-slider3"><span>Adicionar ao Carrinho
-            </span></button></div>
+            <div class="ism-caption ism-caption-0"><button class="adicionar-ao-carrinho produto-slider3" data-idproduto="5"><span>Adicionar ao Carrinho</span></button></div>
           </li>
         </ol>
       </div>
@@ -80,14 +80,12 @@
                   <h3>Fritadeira Eletrônica Britânia S <br>Óleo Bfr46Pi - Britania
                     <br> R$ 1.062,10</h3>
                   <img src="../view/img/fritadeira eletronica.jpg" alt="Produto 1">
-                  <button class="adicionar-ao-carrinho" data-produto-id="produto1"><span>Adicionar ao Carrinho
-                  </span></button>
+                  <button class="adicionar-ao-carrinho" data-produto-id="produto1" data-idproduto="6"><span>Adicionar ao Carrinho</span></button>
                 </div>
                 <div class="produto2">
                   <h3>Ar Condicionado Janela Consul 7500 BTU/<br> Frio Eletrônico CCN07FBANA 127 Volts <br> R$ 3.148,20</h3>
                   <img src="../view/img/arcondicionado eletronico.jpg" alt="Produto 2">
-                  <button class="adicionar-ao-carrinho" data-produto-id="produto2"><span>Adicionar ao Carrinho
-                  </span></button>
+                  <button class="adicionar-ao-carrinho" data-produto-id="produto2" data-idproduto="7"><span>Adicionar ao Carrinho</span></button>
                 </div>
               </nav>
             </div>
@@ -97,14 +95,12 @@
                 <div class="produto3">
                   <h3>Micro-ondas Inox 36L 127V Electrolux <br> R$ 849,90</h3>
                   <img src="../view/img/microondas.jpg" alt="Produto 3">
-                  <button class="adicionar-ao-carrinho" data-produto-id="produto3"><span>Adicionar ao Carrinho
-                  </span></button>
+                  <button class="adicionar-ao-carrinho" data-produto-id="produto3" data-idproduto="8"><span>Adicionar ao Carrinho</span></button>
                 </div>
                 <div class="produto4">
                   <h3>Forno de Embutir Elétrico 80L <br>Experience com Foodsensor 220V Electrolux<br>R$ 2.349,90</h3>
                   <img src="../view/img/eletromestico forno.jpg" alt="Produto 4">
-                  <button class="adicionar-ao-carrinho" data-produto-id="produto4"><span>Adicionar ao Carrinho
-                  </span></button>
+                  <button class="adicionar-ao-carrinho" data-produto-id="produto4" data-idproduto="9"><span>Adicionar ao Carrinho</span></button>
                 </div>
               </nav>
             </div>
@@ -114,14 +110,14 @@
                 <div class="produto5">
                   <h3>Smartphone Samsung Galaxy A04e 64GB <br>Azul 4G Octa-Core 3GB RAM 6,5” Câm. <br>Dupla + Selfie 5MP<br> R$ 566,10</h3>
                   <img src="../view/img/Samsung Galaxy.jpg" alt="Produto 5">
-                  <button class="adicionar-ao-carrinho" data-produto-id="produto5"><span>Adicionar ao Carrinho
-                  </span></button>
+                  <button class="adicionar-ao-carrinho" data-produto-id="produto5" data-idproduto="10"><span>Adicionar ao Carrinho</span>
+                </button>
                 </div>
                 <div class="produto6">
                   <h3>Smartphone Motorola Moto G14 128GB <br>Grafite 4G Octa-Core 4 GB RAM 6,5" Câm. <br>Dupla + Selfie 8MP Dual Nano SIM <br> R$ 764,10</h3>
                   <img src="../view/img/Motorola Moto.jpg" alt="Produto 6">
-                  <button class="adicionar-ao-carrinho" data-produto-id="produto6"><span>Adicionar ao Carrinho
-                  </span></button>
+                  <button class="adicionar-ao-carrinho" data-produto-id="produto6" data-idproduto="11"><span>Adicionar ao Carrinho</span>
+                </button>
                 </div>
               </nav>
             </div>
