@@ -36,11 +36,11 @@ $conn->close();
    </div> 
 
    <script>
- // Função para adicionar produto ao carrinho
+// Função para adicionar produto ao carrinho
 function adicionarAoCarrinho(idProduto) {
    // Fazer uma requisição AJAX para adicionar o produto ao carrinho
    $.ajax({
-      url: 'adicionar_ao_carrinho.php',
+      url: 'addcar.php',
       method: 'POST',
       data: { idProduto: idProduto },
       success: function(response) {
@@ -59,7 +59,7 @@ function adicionarAoCarrinho(idProduto) {
 
 // Adicionar evento de clique aos botões "Adicionar ao Carrinho"
 $('.adicionar-ao-carrinho').on('click', function() {
-   const idProduto = $(this).data('id');
+   var idProduto = $(this).data('idproduto');
    adicionarAoCarrinho(idProduto);
 });
    </script>
