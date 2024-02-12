@@ -1,0 +1,31 @@
+/* Estilo para o carrinho de compras */
+#carrinho {
+    margin-top: 20px;
+}
+
+.produto-no-carrinho {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.produto-no-carrinho h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.produto-no-carrinho p {
+    margin-bottom: 0;
+}
+
+button[type="submit"] {
+    background-color: #ff0000; /* Vermelho */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #cc0000; /* Vermelho mais escuro ao passar o mouse */
+}
