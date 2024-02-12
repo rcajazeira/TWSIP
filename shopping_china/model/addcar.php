@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Função para calcular o total da compra
+// Função para calcular o total da compra com desconto de 15%
 function calcularTotalCompra() {
     $total = 0;
     foreach ($_SESSION['carrinho'] as $idProduto) {
@@ -23,23 +23,35 @@ function calcularTotalCompra() {
 
         $conn->close();
     }
-    return $total;
+    // Aplicar desconto de 15%
+    $totalComDesconto = $total * 0.85;
+    return $totalComDesconto;
 }
 
-// Verificar se a solicitação é para adicionar um produto ao carrinho
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idProduto'])) {
-    $idProduto = $_POST['idProduto'];
-
-    // Adicionar o ID do produto ao carrinho
-    $_SESSION['carrinho'][] = $idProduto;
-
-    // Envie uma resposta de sucesso para o JavaScript
-    echo json_encode(['success' => true]);
-    exit();
+// Verificar se a solicitação é para adicionar ou remover um produto do carrinho
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['idProduto'])) {
+        // Adicionar o ID do produto ao carrinho
+        $idProduto = $_POST['idProduto'];
+        $_SESSION['carrinho'][] = $idProduto;
+        // Envie uma resposta de sucesso para o JavaScript
+        echo json_encode(['success' => true]);
+        exit();
+    } elseif (isset($_POST['removerProduto'])) {
+        // Remover o produto do carrinho
+        $idProdutoRemover = $_POST['removerProduto'];
+        $indice = array_search($idProdutoRemover, $_SESSION['carrinho']);
+        if ($indice !== false) {
+            unset($_SESSION['carrinho'][$indice]);
+        }
+        // Redirecionar de volta para a página do carrinho
+        header('Location: addcar.php');
+        exit();
+    }
 }
 
-// Calcular o total da compra
-$totalCompra = calcularTotalCompra();
+// Calcular o total da compra com desconto
+$totalCompraComDesconto = calcularTotalCompra();
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +102,22 @@ $totalCompra = calcularTotalCompra();
       ?>
    </div> 
 
-   <!-- Exibir total da compra -->
-   <p>Total da compra: R$ <?php echo number_format($totalCompra, 2, ',', '.'); ?></p>
+   <!-- Exibir total da compra com desconto -->
+   <p>Total da compra com desconto de 15%: R$ <?php echo number_format($totalCompraComDesconto, 2, ',', '.'); ?></p>
+
+   <!-- Exibir opções de pagamento -->
+   <h2>Formas de Pagamento:</h2>
+   <ul>
+       <li>Pix</li>
+       <li>Boleto Bancário</li>
+       <li>Cartão de Crédito</li>
+       <li>Cartão de Débito</li>
+   </ul>
 </body>
 </html>
+
+
+
+
+
+
