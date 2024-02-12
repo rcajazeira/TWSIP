@@ -1,9 +1,61 @@
+<?php
+// Incluir o arquivo config.php
+require 'config.php';
+
+session_start();
+
+       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          // Verifique se o ID do produto foi enviado
+          if (isset($_POST['idProduto'])) {
+             $idProduto = $_POST['idProduto'];
+    
+             // Adicione o ID do produto ao carrinho
+             $_SESSION['carrinho'][] = $idProduto;
+    
+             // Obtenha os detalhes do produto com base no ID
+             $conn = new mysqli("localhost", "root", "", "shopping_china");
+    
+             if ($conn->connect_error) {
+                 die("Erro na conexão com o banco de dados: " . $conn->connect_error);
+             }
+    
+             $sql = "SELECT * FROM produto WHERE idproduto = $idProduto";
+             $result = $conn->query($sql);
+    
+             if ($result->num_rows > 0) {
+                 $carrinhoHtml = '';
+                 while ($row = $result->fetch_assoc()) {
+                     $nome = $row['nome'];
+                     $preco = $row['preco'];
+    
+                     // Construa a exibição do produto adicionado ao carrinho
+                     $carrinhoHtml .= '<div class="produto-no-carrinho" data-idproduto="' . $idProduto . '">';
+                     $carrinhoHtml .= '<h3>' . $nome . '</h3>';
+                     $carrinhoHtml .= '<p>Preço: ' . $preco . '</p>';
+                     $carrinhoHtml .= '<button class="remover-do-carrinho" data-idproduto="' . $idProduto . '">Remover</button>';
+                     $carrinhoHtml .= '</div>';
+                 }
+    
+                 // Envie uma resposta de sucesso para o JavaScript
+                 echo json_encode(['success' => true, 'carrinhoHtml' => $carrinhoHtml]);
+                 exit();
+             }
+    
+             $conn->close();
+          }
+       }
+    
+       // Envie uma resposta de erro para o JavaScript
+       echo json_encode(['success' => false]);
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- links externos -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +66,7 @@
     <link rel="stylesheet" href="../shopping_china2.css">
     <link rel="stylesheet" href="../view/css/carousel_logado.css">
     <script src="../controller/carousel.js"></script>
+   
     <title>Shopping China</title>
 </head>
 <body>
@@ -163,7 +216,7 @@
         </div>
     </footer>
     <script src="../controller/adicionecar.js"></script>
-    <script src="../controller/adicionecar2.js"></script>
+    <!-- <script src="../controller/adicionecar2.js"></script> -->
  
 </body>
 </html>
