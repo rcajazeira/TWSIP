@@ -221,7 +221,7 @@ session_start();
         </div>
     </footer>
     <script src="../controller/adicionecar.js"></script>
-    <!-- <script src="../controller/adicionecar2.js"></script> -->
+    
  
 </body>
 </html>

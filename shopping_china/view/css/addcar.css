@@ -50,7 +50,7 @@ h1 {
 }
 
 button[type="submit"] {
-    background-color: #ff0000; /* Vermelho */
+    background-color: #ff0000;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -61,7 +61,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #cc0000; /* Vermelho mais escuro ao passar o mouse */
+    background-color: #cc0000; 
 }
 
 h2 {
@@ -70,7 +70,7 @@ h2 {
     margin-top: 30px; 
 }
 
-/* Estilizando a lista */
+
 .payment-methods {
     list-style: none;
     padding: 0;
@@ -82,22 +82,21 @@ h2 {
     font-size: 20px;
  }
  
- /* Estilizando os ícones */
- /* Estilizando os ícones */
+
 .payment-methods .icon {
     display: inline-block;
-    width: 42px; /* Largura */
-    height: 42px; /* Altura */
+    width: 42px; 
+    height: 42px; 
     margin-right: 10px;
-    background-size: contain; /* Alterado para 'contain' para lidar com SVGs */
-    background-repeat: no-repeat; /* Evita repetição em SVGs */
-    background-position: center; /* Centraliza o SVG */
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
     border: 1px solid black;
     background-color: #FFF;
     cursor: pointer;
  }
  
- /* Definindo os ícones específicos */
+ 
  .payment-methods .pix {
     margin-left: 30px;
     box-shadow: 0px 4px 4px 0px #000;

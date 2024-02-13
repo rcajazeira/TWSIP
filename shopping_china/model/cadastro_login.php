@@ -71,17 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nomeLogin']) && isset(
     </form>
 
     <h1>Login</h1>
-    <!-- <form id="loginForm" method="POST" action="cadastro_login.php" onsubmit="return fazerLogin()"> -->
-        <!-- Campos do formulário de login -->
-        <!-- <label for="nomeLogin">Nome:</label>
-        <input type="text" id="nomeLogin" name="nomeLogin" required>
-        <br>
-        <label for="cpfLogin">CPF:</label>
-        <input type="text" id="cpfLogin" name="cpfLogin" required>
-        <br>
-        <input type="submit" value="Login">
-    </form>    -->
-
     
     <form id="loginForm" method="POST" action="cadastro_login.php" onsubmit="return fazerLogin()">
 
@@ -162,6 +151,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nomeLogin']) && isset(
 }
 
     </script>
-    <!-- <script src="../controller/cadastroForm2.js"></script> -->
+    
 </body>
 </html>
