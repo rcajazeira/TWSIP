@@ -104,16 +104,53 @@ $totalCompraComDesconto = calcularTotalCompra();
    </div> 
 
    <!-- Exibir total da compra com desconto -->
-   <p>Total da compra com desconto de 15%: R$ <?php echo number_format($totalCompraComDesconto, 2, ',', '.'); ?></p>
+   <p class="preco">Total da compra com desconto de 15%: R$ <?php echo number_format($totalCompraComDesconto, 2, ',', '.'); ?></p>
 
    <!-- Exibir opções de pagamento -->
    <h2>Formas de Pagamento:</h2>
-   <ul>
-       <li>Pix</li>
-       <li>Boleto Bancário</li>
-       <li>Cartão de Crédito</li>
-       <li>Cartão de Débito</li>
-   </ul>
+   <ul class="payment-methods">
+   <li><img class="icon pix" src="../view/icon/pix-106.svg" alt="Ícone Pix"> Pix</li>
+   <li><img class="icon boleto" src="../view/icon/boleto.svg" alt="Ícone Boleto Bancário"> Boleto Bancário</li>
+   <li><img class="icon credit-card" src="../view/icon/mastercard-18.svg" alt="Ícone Cartão de Crédito"> Cartão de Crédito</li>
+   <li><img class="icon debit-card" src="../view/icon/visa-17.svg" alt="Ícone Cartão de Débito"> Cartão de Débito</li>
+</ul>
+
+
+   <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <br>
+                <p>Endereço: Av. Eletrônica, 123</p>
+                <p>Email: contato@shoppingchina.com</p>
+                <p>Telefone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <br>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sobre</h3>
+                <br>
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">FAQ</a>
+                <a href="#">AJUDA</a>
+                <a href="#">TRABALHE CONOSCO</a>
+            </div>
+        </div>
+    
+        <div class="developer-info">
+            <p>Desenvolvido por <span class="developer-name">Rafael Cajazeira</span></p>
+            <a href="https://rcajazeira.github.io/" target="_blank">
+            <img src="../view/img/desenv.jpg" alt="Logo do Desenvolvedor"></a>
+        </div>
+    </footer>
 </body>
 </html>
 

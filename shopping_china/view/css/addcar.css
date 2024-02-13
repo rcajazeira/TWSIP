@@ -1,21 +1,52 @@
+/* zerando o css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, rgba(218, 149, 229, 0.82) 0%, rgba(231, 15, 15, 0.00) 100%);
+ 
+    
+}
+
+h1 {
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-top: 30px;
+   
+   
+}
+
 /* Estilo para o carrinho de compras */
 #carrinho {
-    margin-top: 20px;
+    margin-top: 35px;
+    margin-left: 15px;
 }
 
 .produto-no-carrinho {
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+    
 }
 
 .produto-no-carrinho h3 {
-    margin-top: 0;
+    margin-top: 5px;
     font-size: 18px;
+    margin-left: 10px;
 }
 
 .produto-no-carrinho p {
-    margin-bottom: 0;
+    margin-bottom: 10px;
+    padding: 10px;
+   
+}
+
+.preco {
+    margin-left: 15px;
 }
 
 button[type="submit"] {
@@ -24,8 +55,139 @@ button[type="submit"] {
     border: none;
     padding: 8px 12px;
     cursor: pointer;
+    border-radius: 9px;
+    box-shadow: 0px 4px 4px 0px #000;
+    transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
     background-color: #cc0000; /* Vermelho mais escuro ao passar o mouse */
+}
+
+h2 {
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-top: 30px; 
+}
+
+/* Estilizando a lista */
+.payment-methods {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ }
+ 
+ .payment-methods li {
+    margin-bottom: 10px;
+    font-size: 20px;
+ }
+ 
+ /* Estilizando os ícones */
+ /* Estilizando os ícones */
+.payment-methods .icon {
+    display: inline-block;
+    width: 42px; /* Largura */
+    height: 42px; /* Altura */
+    margin-right: 10px;
+    background-size: contain; /* Alterado para 'contain' para lidar com SVGs */
+    background-repeat: no-repeat; /* Evita repetição em SVGs */
+    background-position: center; /* Centraliza o SVG */
+    border: 1px solid black;
+    background-color: #FFF;
+    cursor: pointer;
+ }
+ 
+ /* Definindo os ícones específicos */
+ .payment-methods .pix {
+    margin-left: 30px;
+    box-shadow: 0px 4px 4px 0px #000;
+ }
+ 
+ .payment-methods .boleto {
+    margin-left: 30px;
+    box-shadow: 0px 4px 4px 0px #000;
+ }
+ 
+ .payment-methods .credit-card {
+    margin-left: 30px;
+    box-shadow: 0px 4px 4px 0px #000;
+ }
+ 
+ .payment-methods .debit-card {
+    margin-left: 30px;
+    box-shadow: 0px 4px 4px 0px #000;
+ }
+ 
+ 
+
+.site-footer {
+    background-color: #73297E;
+    margin-top: 100px;
+    padding: 50px 0;
+    color: #FFF;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px #000;
+    height: auto;
+    
+}
+
+.footer-section h3 {
+    font-size: 3em;
+    margin-top: 35px;
+    color: #FBCB23;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px #73297E;
+    font-family: 'Roboto Serif', serif;
+    font-weight: 900;
+    margin-left: 30px;
+}
+
+.footer-section p {
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px #000;
+    font-size: 1em;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.footer-section a {
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px #000;
+    font-size: 1em;
+    margin-left: 5%;
+    margin-left: 30px;
+}
+
+.developer-info p {
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px #000;
+    font-size: 1em;
+    margin-left: 5%;
+    box-shadow: 0px 4px 4px 0px #000;
+    margin-right: 5%;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    transform: translate(0, -50%);
+    text-align: right;
+}
+
+.developer-info img {
+    box-shadow: 0px 4px 4px 0px #000;
+    position: absolute;
+    top: 65%;
+    right: 0;
+    transform: translate(0, -60%);
+    text-align: right;
+    margin-right: 5%;
+}
+
+.developer-info img {
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.developer-info img:hover {
+    transform: scale(0.9) translateX(-10px);
 }

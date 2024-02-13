@@ -44,9 +44,14 @@ session_start();
              $conn->close();
           }
        }
-    
+      
        // Envie uma resposta de erro para o JavaScript
        echo json_encode(['success' => false]);
+
+       
+      
+      
+       
 
 ?>
 <!DOCTYPE html>
