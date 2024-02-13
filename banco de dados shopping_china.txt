@@ -67,26 +67,3 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-
-use shopping_china;
-select * from cliente;
-show tables;
-select * from produto;
-INSERT INTO produto (nome, preco) VALUES ('Smartphone Positivo Twist 5 64GB Preto 3G Unisoc 2GB RAM 6,26" Câm. 8MP + Selfie 8MP Dual Chip', 359.10);
-
-DELETE FROM cliente WHERE cpf = '23109236675';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
